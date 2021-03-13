@@ -1,4 +1,4 @@
-# Clean-nodes
+# Clean-words
 
 Clean rich text copied from MS Word to pure HTML nodes.
 
