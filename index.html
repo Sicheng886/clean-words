@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordtoHTML</title>
+    <style>
+      main {
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+      }
+      #inputDiv {
+        width: 45%;
+        border: 1px solid #333;
+      }
+      textarea {
+        width: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Word to HTML</h1>
+    <main>
+      <div contenteditable="true" id="inputDiv"></div>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </main>
+    <script src="./cleanHTML.js"></script>
+    <script>
+      document.querySelector('#inputDiv').addEventListener('keyup', () => {
+        const clean = new CleanHTML();
+        document.querySelector('textarea').value = clean.cleanHTML(
+          document.querySelector('#inputDiv').innerHTML
+        );
+      });
+    </script>
+  </body>
+</html>
